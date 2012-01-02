@@ -5,16 +5,6 @@ gem 'rails', '3.0.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-platforms :ruby do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
-platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'trinidad'
-  gem 'jruby-openssl'
-end
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -33,6 +23,7 @@ gem 'coderay'
 gem 'lesstile'
 gem 'formtastic'
 gem 'will_paginate', '= 3.0.pre2'
+gem 'heroku'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
@@ -44,4 +35,10 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'nokogiri', '~> 1.5.0'
+  gem 'autotest'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end

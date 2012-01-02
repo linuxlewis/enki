@@ -5,16 +5,20 @@
   <title><%= html_title yield(:page_title) %></title>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'style' %>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'rails' %>
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
 <body>
+<!-- Github ribbon -->
+<a href="https://github.com/linuxlewis/portfolio"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/c641758e06304bc53ae7f633269018169e7e5851/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+<!-- end Github ribbon -->
   <div id="page_container">
     <div id="content">
-      <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
-
+      <h1 id="page_heading" ><a class="main_title" href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
+      <hr>
       <div id="main">
         <%= yield %>
       </div>
