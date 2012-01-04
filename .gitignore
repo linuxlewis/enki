@@ -6,4 +6,5 @@ db/schema.rb
 config/database.yml
 .bundle
 *.log
+*.swo
 *.swp
