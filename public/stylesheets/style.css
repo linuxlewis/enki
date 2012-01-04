@@ -1,5 +1,9 @@
 /****************** STYLE.CSS **************/
 
+
+
+
+/*********RESET **********/
 h1,h2, h3, h4{
 
     color:white;
@@ -38,16 +42,10 @@ body{
     background:url(../images/black-Linen.png) repeat top right;
     font-family: 'Helvetica Neue', 'Lucida Grande', Arial;
 }
-.body{
-    color:#666666;
-    background: rgba(0,0,0,0.5);
-			  border: 1px solid #323232;
-			  -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
-			  -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
-			  -webkit-border-radius: 5px;
-			  -moz-border-radius: 5px;
-    padding:10px 20px;
+ol{
+  list-style-type:none;
 }
+
 .main_body{
     color:white;
     font-size:18px;
@@ -66,8 +64,7 @@ body{
     text-align:left;
 }
 
-#header h1, h3{
-}
+/****HEADER ****/
 .main_title{
     color:#b07435;
 }
@@ -125,15 +122,74 @@ body{
 .current{
     color:#666666;
 }
-.step-links{
-    float:right;
+/**** Layout overrides ***/
+#main{
+  padding:0 0 40px 0;
+  width:700px;
+  float:left;
 }
-.comment{
-    color:#666666;
-    width:600px;
-    margin:15px 0 0 0;
+#navigation{
+  border:0;
+  padding:10px;
+  position:relative;
+  float:left;
 }
-#comment_container{
-    width:600px;
+/******** POST STYLES ******/
+.post_title{
+  font-size:1.5em;
+  color:#b07435;
+}
+/*** POST BODY ***/
+.entrybody{
+color: #CCC;
+font-size:1.3em;
+/*background: #666;*/
+/*text-shadow: 0px 1px 1px #fff;*/
+} 
+/*** transparent background ***/
+.post_body{
     color:#666666;
+    background: rgba(0,0,0,0.5);
+			  border: 1px solid #323232;
+			  -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
+			  -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
+			  -webkit-border-radius: 5px;
+			  -moz-border-radius: 5px;
+    padding:10px 20px;
+}
+
+.related{
+  background: rgba(0,0,0,0);
+
+}
+.alt, .container_alt{
+  background-color: rgba(0,0,0,0);
+}
+/***Archive ***/
+.archive_title{
+  font-size:200%;
+}
+
+ul{
+  color:white;
+  list-style-type:square;
+}
+
+/***** errors *****/
+.errors > h3 {
+  color:red;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0);
+  font-size:2em;
+}
+
+
+
+/****COMMENTS *****/
+.commentlist{
+
+  margin-top:30px;
+
+}
+.section_margin{
+  margin-top:40px;
 }

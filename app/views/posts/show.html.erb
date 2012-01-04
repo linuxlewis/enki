@@ -2,25 +2,22 @@
   <%= javascript_include_tag 'common' %>
   <%= javascript_include_tag 'live-comment-preview' %>
 <% end -%>
+<div class="post_body">
 <% content_for(:page_title) do -%>
 <%= post_title(@post) -%>
 <% end -%>
 <%= render :partial => 'posts/post', :locals => {:post => @post} %>
-<ol class="commentlist">
-  <% @post.approved_comments.each do |comment| -%>
-  <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
-    <%= render :partial => 'comments/comment', :locals => {:comment => comment} %>
-  </li>
-  <% end -%>
-</ol>
-<div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
+
+<!--<div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div> -->
+</div>
+<div class="post_body section_margin">
 <h2>Post a comment</h2>
   <% unless @comment.errors.empty? -%>
   <div class="errors">
     <h3>Comment not added!</h3>
     <ul>
       <% @comment.errors.sort_by(&:first).each do |error| -%>
-        <li><%= format_comment_error(error) %></li>
+        <li><b><%= format_comment_error(error) %></b></li>
       <% end -%>
     </ul>
   </div>
@@ -32,3 +29,14 @@
     <p><%= submit_tag "Add Comment" %></p>
   </div>
 <% end -%>
+<h2>Comments</h2>
+<ol class="commentlist">
+  <% @post.approved_comments.each do |comment| -%>
+  <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
+    <%= render :partial => 'comments/comment', :locals => {:comment => comment} %>
+  </li>
+  <% end -%>
+</ol>
+</div>
+
+
