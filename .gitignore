@@ -3,6 +3,7 @@ log
 tmp/**/*
 tmp
 db/schema.rb
+config/database.yml
 .bundle
 *.log
 *.swp
